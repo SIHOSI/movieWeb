@@ -116,7 +116,7 @@ main {
     right: 0;
     bottom: 0;
     background-color: #586270;
-    padding: 0.5rem 1rem;
+    padding: 0.1rem 1rem;
     height: 200px;
     transform: translateX(-101%);
     transition: transform 0.05s ease-in;

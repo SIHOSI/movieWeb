@@ -66,10 +66,11 @@ const showMovies = (data) => {
                                 <h3>${title}</h3>
                                 <span class="${color(
                                     vote_average
-                                )}">${vote_average}</span>
+                                )}">${vote_average.toFixed(1)}</span>
                             </div>
 
                             <div class="overview" onclick="imageClick(${id})">
+                                <h2>${title}</h2>
                                 <h3>${overview}</h3>
                             </div>`;
 
