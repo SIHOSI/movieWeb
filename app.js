@@ -80,7 +80,7 @@ const showMovies = (data) => {
 };
 
 getMovies(
-    'https://api.themoviedb.org/3/movie/popular?api_key=e2124fff88b3cf85df566d38b1f8ae8f'
+    'https://api.themoviedb.org/3/movie/popular?api_key=e2124fff88b3cf85df566d38b1f8ae8f&language=ko'
 );
 
 form.addEventListener('submit', (text) => {
@@ -90,17 +90,17 @@ form.addEventListener('submit', (text) => {
 
     if (searchTerm) {
         getMovies(
-            `https://api.themoviedb.org/3/search/movie?api_key=e2124fff88b3cf85df566d38b1f8ae8f&query=${searchTerm}`
+            `https://api.themoviedb.org/3/search/movie?api_key=e2124fff88b3cf85df566d38b1f8ae8f&query=${searchTerm}&language=ko`
         );
     } else {
         getMovies(
-            'https://api.themoviedb.org/3/movie/popular?api_key=e2124fff88b3cf85df566d38b1f8ae8f'
+            'https://api.themoviedb.org/3/movie/popular?api_key=e2124fff88b3cf85df566d38b1f8ae8f&language=ko'
         );
     }
 });
 
 homeButton.addEventListener('click', () => {
     getMovies(
-        'https://api.themoviedb.org/3/movie/popular?api_key=e2124fff88b3cf85df566d38b1f8ae8f'
+        'https://api.themoviedb.org/3/movie/popular?api_key=e2124fff88b3cf85df566d38b1f8ae8f&language=ko'
     );
 });
