@@ -70,14 +70,20 @@ const showMovies = (data) => {
                             </div>
 
                             <div class="overview" onclick="imageClick(${id})">
-                                <h2>${title}</h2>
                                 <h3>${overview}</h3>
                             </div>`;
 
         main.appendChild(movie);
     });
 
-    mouse;
+    const movies = document.querySelectorAll('.movie');
+    console.log(movies);
+
+    movies.forEach((item) => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
 };
 
 getMovies(API_POPULAR + 'api_key=' + API_KEY + '&language=ko');
