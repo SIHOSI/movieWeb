@@ -91,7 +91,7 @@ getMovies(API_POPULAR + 'api_key=' + API_KEY + '&language=ko'); // getmovies 실
 
 form.addEventListener('submit', (text) => {
     text.preventDefault();
-    // console.log(text); // SubmitEvent 객체 반환
+    // console.log(text); // SubmitEvent 객체 반환 , 주의)input. 하면 안됨
     const searchTerm = search.value; // 입력한 값을 searchTerm 에 저장.
 
     if (searchTerm) {
