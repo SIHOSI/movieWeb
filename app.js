@@ -1,4 +1,4 @@
-const API_KEY = config.apikey; //config.js에서 apikey 불러오기
+const API_KEY = config.apikey; //config.js에서 apikey 불러오기 // api키를 입력.
 
 const API_POPULAR = 'https://api.themoviedb.org/3/movie/popular?';
 
