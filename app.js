@@ -1,8 +1,8 @@
-const API_KEY = '?api_key=e2124fff88b3cf85df566d38b1f8ae8f';
+const API_KEY = config.apikey;
 
-const API_POPULAR = 'https://api.themoviedb.org/3/movie/popular';
+const API_POPULAR = 'https://api.themoviedb.org/3/movie/popular?';
 
-const API_SEARCH = 'https://api.themoviedb.org/3/search/movie';
+const API_SEARCH = 'https://api.themoviedb.org/3/search/movie?';
 
 const options = {
     method: 'GET',
@@ -80,9 +80,7 @@ const showMovies = (data) => {
     mouse;
 };
 
-getMovies(
-    'https://api.themoviedb.org/3/movie/popular?api_key=e2124fff88b3cf85df566d38b1f8ae8f&language=ko'
-);
+getMovies(API_POPULAR + 'api_key=' + API_KEY + '&language=ko');
 
 form.addEventListener('submit', (text) => {
     text.preventDefault();
@@ -91,17 +89,16 @@ form.addEventListener('submit', (text) => {
 
     if (searchTerm) {
         getMovies(
-            `https://api.themoviedb.org/3/search/movie?api_key=e2124fff88b3cf85df566d38b1f8ae8f&query=${searchTerm}&language=ko`
+            API_SEARCH +
+                'api_key=' +
+                API_KEY +
+                `&query=${searchTerm}&language=ko`
         );
     } else {
-        getMovies(
-            'https://api.themoviedb.org/3/movie/popular?api_key=e2124fff88b3cf85df566d38b1f8ae8f&language=ko'
-        );
+        getMovies(API_POPULAR + 'api_key=' + API_KEY + '&language=ko');
     }
 });
 
 homeButton.addEventListener('click', () => {
-    getMovies(
-        'https://api.themoviedb.org/3/movie/popular?api_key=e2124fff88b3cf85df566d38b1f8ae8f&language=ko'
-    );
+    getMovies(API_POPULAR + 'api_key=' + API_KEY + '&language=ko');
 });
