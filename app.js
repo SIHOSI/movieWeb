@@ -165,3 +165,4 @@ nowplayingTab.addEventListener('click', () => {
 upcomingTab.addEventListener('click', () => {
     getMovies(API_UP + 'api_key=' + API_KEY + '&language=ko');
 });
+//메뉴 조작
