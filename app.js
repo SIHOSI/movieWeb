@@ -18,6 +18,8 @@ const form = document.getElementById('form');
 
 const search = document.getElementById('search');
 
+const searchIcon = document.querySelector('.fa-magnifying-glass');
+
 const mouse = main.addEventListener('mouseover', (event) => {
     // console.log(event); // mouseevent 객체 반환
     const target = event.target;
@@ -106,6 +108,22 @@ form.addEventListener('submit', (text) => {
     }
 }); // 검색어를 포함한 영화를 가져와서 화면에 표시 / 내용 없이 엔터를 치면 초기 화면으로 돌아감
 
+searchIcon.addEventListener('click', () => {
+    const searchTerm = search.value;
+
+    if (searchTerm) {
+        getMovies(
+            API_SEARCH +
+                'api_key=' +
+                API_KEY +
+                `&query=${searchTerm}&language=ko`
+        );
+    } else {
+        getMovies(API_POPULAR + 'api_key=' + API_KEY + '&language=ko');
+    }
+});
+
 homeButton.addEventListener('click', () => {
+    search.value = ''; // 홈버튼 누를 시 검색창 초기화
     getMovies(API_POPULAR + 'api_key=' + API_KEY + '&language=ko');
 }); // 홈버튼 누르면 첫번째 페이지로 돌아감.
