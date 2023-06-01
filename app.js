@@ -87,7 +87,7 @@ const showMovies = (data) => {
     });
 };
 
-getMovies(API_POPULAR + 'api_key=' + API_KEY + '&language=ko'); // getmovies 실행.
+getMovies(API_POPULAR + 'api_key=' + API_KEY + '&language=ko'); // getmovies 실행. // &language=ko 하면 한글로 출력
 
 form.addEventListener('submit', (text) => {
     text.preventDefault();
