@@ -12,10 +12,16 @@
         <title>Project</title>
     </head>
     <body>
-        <header>
+        <header id="header">
             <div class="homeButton">
                 <button id="homeButton">WATFLIX</button>
             </div>
+            <nav>
+                <div class="tab-item" id="popularTab">Popular</div>
+                <div class="tab-item" id="nowplayingTab">Now Playing</div>
+                <div class="tab-item" id="toprateTab">Top Rated</div>
+                <div class="tab-item" id="upcomingTab">Upcoming</div>
+            </nav>
             <form id="form">
                 <div class="box">
                     <input
@@ -25,7 +31,10 @@
                         class="search"
                         autofocus
                     />
-                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    <i
+                        class="fa-sharp fa-solid fa-magnifying-glass"
+                        id="searchicon"
+                    ></i>
                 </div>
             </form>
         </header>

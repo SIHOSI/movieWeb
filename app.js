@@ -4,6 +4,12 @@ const API_POPULAR = 'https://api.themoviedb.org/3/movie/popular?';
 
 const API_SEARCH = 'https://api.themoviedb.org/3/search/movie?';
 
+const API_TOP = 'https://api.themoviedb.org/3/movie/top_rated?';
+
+const API_NOW = 'https://api.themoviedb.org/3/movie/now_playing?';
+
+const API_UP = 'https://api.themoviedb.org/3/movie/upcoming?';
+
 const main = document.getElementById('main');
 // console.log(main);
 // const main2 = document.querySelector('main');
@@ -11,6 +17,8 @@ const main = document.getElementById('main');
 
 // const main3 = document.querySelectorAll('main');
 // console.log(main3); // Nodelist를 반환
+
+const header = document.getElementById('header');
 
 const homeButton = document.getElementById('homeButton');
 
@@ -20,7 +28,15 @@ const search = document.getElementById('search');
 
 const searchIcon = document.querySelector('.fa-magnifying-glass');
 
-const mouse = main.addEventListener('mouseover', (event) => {
+const mouseHeader = header.addEventListener('mouseover', (event) => {
+    // console.log(event); // mouseevent 객체 반환
+    const target = event.target;
+    if (target.tagName === 'NAV' || target.tagName === 'I') {
+        target.style.cursor = 'pointer';
+    }
+}); // 마우스를 카드 위에 올렸을때 마우스포인터를 바꿔준다
+
+const mouseMain = main.addEventListener('mouseover', (event) => {
     // console.log(event); // mouseevent 객체 반환
     const target = event.target;
     if (target.tagName === 'IMG' || target.className === 'overview') {
@@ -95,7 +111,7 @@ form.addEventListener('submit', (text) => {
     text.preventDefault();
     // console.log(text); // SubmitEvent 객체 반환 , 주의)input. 하면 안됨
     const searchTerm = search.value; // 입력한 값을 searchTerm 에 저장.
-
+    search.value = ''; // 페이지 넘어가면 검색창 초기화
     if (searchTerm) {
         getMovies(
             API_SEARCH +
@@ -110,7 +126,7 @@ form.addEventListener('submit', (text) => {
 
 searchIcon.addEventListener('click', () => {
     const searchTerm = search.value;
-
+    search.value = ''; // 페이지 넘어가면 검색창 초기화
     if (searchTerm) {
         getMovies(
             API_SEARCH +
@@ -127,3 +143,25 @@ homeButton.addEventListener('click', () => {
     search.value = ''; // 홈버튼 누를 시 검색창 초기화
     getMovies(API_POPULAR + 'api_key=' + API_KEY + '&language=ko');
 }); // 홈버튼 누르면 첫번째 페이지로 돌아감.
+
+// 메뉴 조작
+const popularTab = document.getElementById('popularTab');
+const toprateTab = document.getElementById('toprateTab');
+const nowplayingTab = document.getElementById('nowplayingTab');
+const upcomingTab = document.getElementById('upcomingTab');
+
+toprateTab.addEventListener('click', () => {
+    getMovies(API_TOP + 'api_key=' + API_KEY + '&language=ko');
+});
+
+popularTab.addEventListener('click', () => {
+    getMovies(API_POPULAR + 'api_key=' + API_KEY + '&language=ko');
+});
+
+nowplayingTab.addEventListener('click', () => {
+    getMovies(API_NOW + 'api_key=' + API_KEY + '&language=ko');
+});
+
+upcomingTab.addEventListener('click', () => {
+    getMovies(API_UP + 'api_key=' + API_KEY + '&language=ko');
+});

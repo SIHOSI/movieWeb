@@ -37,6 +37,17 @@ header {
     font-family: 'Lilita One', cursive;
 }
 
+nav {
+    display: flex;
+    color: tomato;
+    font-weight: bold;
+    padding-right: 4rem;
+}
+
+nav .tab-item {
+    margin: 1rem 1rem 0rem 1rem;
+}
+
 .box {
     position: relative;
 }
@@ -49,7 +60,7 @@ header {
     font-size: 1rem;
     color: #fff;
     font-family: inherit;
-    width: 95%;
+    width: 236px;
 }
 
 .search:focus {
@@ -67,10 +78,6 @@ header {
     color: #00adb5;
     right: -5px;
     bottom: 20%;
-}
-
-.fa-sharp:hover {
-    cursor: pointer;
 }
 
 main {
