@@ -34,7 +34,7 @@ const mouseHeader = header.addEventListener('mouseover', (event) => {
     if (target.tagName === 'NAV' || target.tagName === 'I') {
         target.style.cursor = 'pointer';
     }
-}); // 마우스를 카드 위에 올렸을때 마우스포인터를 바꿔준다
+}); // 마우스를 메뉴와 돋보기 위에 올렸을때 마우스포인터를 바꿔준다
 
 const mouseMain = main.addEventListener('mouseover', (event) => {
     // console.log(event); // mouseevent 객체 반환
